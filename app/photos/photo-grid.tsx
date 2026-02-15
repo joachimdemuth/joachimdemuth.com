@@ -35,6 +35,8 @@ function Lightbox({
           alt={photo.alt}
           width={1600}
           height={1200}
+          sizes="90vw"
+          quality={90}
           className="max-h-[85vh] w-auto rounded-sm object-contain"
           priority
         />
@@ -73,8 +75,10 @@ export function PhotoGrid({ photos }: { photos: Photo[] }) {
             <Image
               src={photo.src}
               alt={photo.alt}
-              width={800}
-              height={photo.aspect === "portrait" ? 1200 : photo.aspect === "square" ? 800 : 533}
+              width={400}
+              height={photo.aspect === "portrait" ? 600 : photo.aspect === "square" ? 400 : 267}
+              sizes="(min-width: 640px) 205px, 50vw"
+              quality={80}
               className="w-full object-cover transition-opacity duration-300 group-hover:opacity-80"
             />
           </button>
