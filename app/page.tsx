@@ -4,19 +4,19 @@ const experience = [
   {
     role: "Tech Lead",
     company: "P-Secure",
-    href: "https://p-secure.com",
+    href: "https://www.p-secure.com",
     period: "2025 --",
   },
   {
     role: "Design Engineer",
     company: "P-Secure",
-    href: "https://p-secure.com",
+    href: "https://www.p-secure.com",
     period: "2024 -- 2025",
   },
   {
     role: "Product Designer",
     company: "Maybe Tomorrow",
-    href: "https://maybetomorrow.dk",
+    href: "",
     period: "2023 -- 2024",
   },
   {
@@ -46,7 +46,7 @@ export default function Home() {
 
       <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted">
         <p>
-          Designer turned tech lead, based in Copenhagen. Currently at{" "}
+          Tech Lead, based in Copenhagen. Currently at{" "}
           <a
             href="https://p-secure.com"
             target="_blank"
@@ -59,14 +59,14 @@ export default function Home() {
           in critical infrastructure.
         </p>
         <p>
-          I started in UX and digital design, spent years shaping interfaces at
+          I started in UX and digital design admiring modern products that pushed the boundaries of design and user experience, spent years shaping interfaces at
           Telenor and smaller studios, and eventually moved into engineering and
           technical leadership. These days I spend most of my time writing code,
           defining product direction, and experimenting with the agentic side of
           AI.
         </p>
         <p>
-          Outside of work I shoot film and spend too much time discovering music.
+          Outside of work I build my ideas to learn new things, shoot film and spend a bunch of time discovering and listening to new music.
         </p>
       </div>
 
