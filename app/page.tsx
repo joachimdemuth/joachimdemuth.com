@@ -1,65 +1,125 @@
-import Image from "next/image";
+import { GradientText } from "./components/gradient-text";
+
+const experience = [
+  {
+    role: "Tech Lead",
+    company: "P-Secure",
+    href: "https://p-secure.com",
+    period: "2025 --",
+  },
+  {
+    role: "Design Engineer",
+    company: "P-Secure",
+    href: "https://p-secure.com",
+    period: "2024 -- 2025",
+  },
+  {
+    role: "Product Designer",
+    company: "Maybe Tomorrow",
+    href: "https://maybetomorrow.dk",
+    period: "2023 -- 2024",
+  },
+  {
+    role: "Digital Designer",
+    company: "VENZO",
+    href: "https://venzo.com",
+    period: "2022 -- 2023",
+  },
+  {
+    role: "Digital Designer",
+    company: "Telenor",
+    href: "https://telenor.dk",
+    period: "2021 -- 2022",
+  },
+  {
+    role: "UX Design Student",
+    company: "Telenor",
+    href: "https://telenor.dk",
+    period: "2020 -- 2021",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+    <main>
+      <h1 className="text-2xl font-medium tracking-tight">Joachim Demuth</h1>
+
+      <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted">
+        <p>
+          Designer turned tech lead, based in Copenhagen. Currently at{" "}
           <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://p-secure.com"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-foreground underline decoration-muted/50 underline-offset-[3px] transition-colors hover:decoration-foreground"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
+            P-Secure
           </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+          , where I lead product and engineering for automated background checks
+          in critical infrastructure.
+        </p>
+        <p>
+          I started in UX and digital design, spent years shaping interfaces at
+          Telenor and smaller studios, and eventually moved into engineering and
+          technical leadership. These days I spend most of my time writing code,
+          defining product direction, and experimenting with the agentic side of
+          AI.
+        </p>
+        <p>
+          Outside of work I shoot film and spend too much time discovering music.
+        </p>
+      </div>
+
+      <section className="mt-16">
+        <h2 className="text-sm font-medium text-muted">Experience</h2>
+        <ul className="mt-6 space-y-4">
+          {experience.map((item) => (
+            <li key={`${item.company}-${item.period}`} className="flex items-baseline justify-between gap-4">
+              <span className="text-[15px]">
+                {item.role},{" "}
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted underline decoration-muted/50 underline-offset-[3px] transition-colors hover:text-foreground hover:decoration-foreground"
+                >
+                  {item.company}
+                </a>
+              </span>
+              <span className="shrink-0 text-sm tabular-nums text-muted">
+                {item.period}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <div className="mt-16 flex gap-6 text-sm text-muted">
+        <a
+          href="https://github.com/joachimdemuth"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GradientText>github</GradientText>
+        </a>
+        <a
+          href="https://x.com/joachimdemuth"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GradientText>x</GradientText>
+        </a>
+        <a
+          href="https://linkedin.com/in/joachimdemuth"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GradientText>linkedin</GradientText>
+        </a>
+        <a href="mailto:jdemuth18@gmail.com">
+          <GradientText>email</GradientText>
+        </a>
+      </div>
+    </main>
   );
 }
