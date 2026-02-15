@@ -13,7 +13,7 @@ export default function Photos() {
       <div className="animate-in">
         <h1 className="text-2xl font-medium tracking-tight">Photos</h1>
         <p className="mt-3 text-[15px] text-muted">
-          A collection of photos show on analog, digital and a range of iPhone cameras.
+          A collection of photos shot on analog, digital and a range of iPhone cameras.
         </p>
       </div>
 

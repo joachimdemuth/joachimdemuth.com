@@ -177,7 +177,7 @@ export const photos: Photo[] = [
     aspect: "portrait",
     camera: OM1,
     year: 2024,
-    latlon: [55.6673604,12.5432921],
+    latlon: [55.668300, 12.559429],
   },
   {
     src: "/photos/000052890014-2.jpg",

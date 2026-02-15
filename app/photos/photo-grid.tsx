@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import type { Photo } from "./data";
 
@@ -40,11 +41,22 @@ function Lightbox({
           className="max-h-[85vh] w-auto rounded-sm object-contain"
           priority
         />
-        {(photo.camera || photo.film) && (
-          <p className="mt-3 text-center text-xs text-muted/70">
-            {[photo.camera, photo.film].filter(Boolean).join(" · ")}
-          </p>
-        )}
+        <div className="mt-3 space-y-1 text-center text-xs text-muted/70">
+          {photo.alt && <p>{photo.alt}</p>}
+          {(photo.camera || photo.film) && (
+            <p>{[photo.camera, photo.film].filter(Boolean).join(" · ")}</p>
+          )}
+          {photo.latlon && (
+            <a
+              href={`https://www.google.com/maps?q=${photo.latlon[0]},${photo.latlon[1]}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block tabular-nums transition-colors hover:text-foreground"
+            >
+              {photo.latlon[0].toFixed(4)}°, {photo.latlon[1].toFixed(4)}°
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -85,7 +97,11 @@ export function PhotoGrid({ photos }: { photos: Photo[] }) {
         ))}
       </div>
 
-      {selected && <Lightbox photo={selected} onClose={close} />}
+      {selected &&
+        createPortal(
+          <Lightbox photo={selected} onClose={close} />,
+          document.body,
+        )}
     </>
   );
 }
