@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { ViewTransition } from "react";
 import { GradientText } from "./components/gradient-text";
 import "./globals.css";
 
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <div className="mx-auto max-w-[640px] px-6 py-16 md:py-24">
+        <div className="mx-auto max-w-[640px] px-6 py-16 md:py-10">
           <nav className="mb-16 flex items-center gap-6 text-sm text-muted">
             <Link href="/">
               <GradientText>home</GradientText>
@@ -42,8 +43,11 @@ export default function RootLayout({
             <Link href="/photos">
               <GradientText>photos</GradientText>
             </Link>
+            <Link href="/notes">
+              <GradientText>notes</GradientText>
+            </Link>
           </nav>
-          {children}
+          <ViewTransition>{children}</ViewTransition>
         </div>
       </body>
     </html>

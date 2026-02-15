@@ -20,19 +20,21 @@ export default async function Music() {
 
   return (
     <main>
-      <h1 className="text-2xl font-medium tracking-tight">Music</h1>
-      <p className="mt-3 text-[15px] text-muted">
-        I spend too much time discovering music. Here&apos;s the result of that.
-      </p>
+      <div className="animate-in">
+        <h1 className="text-2xl font-medium tracking-tight">Music</h1>
+        <p className="mt-3 text-[15px] text-muted">
+          I spend a lot of time discovering music. Here&apos;s the result of that.
+        </p>
+      </div>
 
       {/* Now Playing */}
-      <section className="mt-10">
+      <section className="animate-in mt-10" style={{ "--delay": "100ms" } as React.CSSProperties}>
         <NowPlaying />
       </section>
 
       {/* Top Artists */}
       {topArtists.length > 0 && (
-        <section className="mt-16">
+        <section className="animate-in mt-16" style={{ "--delay": "200ms" } as React.CSSProperties}>
           <h2 className="text-sm font-medium text-muted">
             Most listened this month
           </h2>
@@ -70,7 +72,7 @@ export default async function Music() {
 
       {/* Top Tracks */}
       {topTracks.length > 0 && (
-        <section className="mt-16">
+        <section className="animate-in mt-16" style={{ "--delay": "300ms" } as React.CSSProperties}>
           <h2 className="text-sm font-medium text-muted">On repeat</h2>
           <ol className="mt-6 space-y-3">
             {topTracks.map((track, i) => (
@@ -111,7 +113,7 @@ export default async function Music() {
 
       {/* Recently Played */}
       {recentlyPlayed.length > 0 && (
-        <section className="mt-16">
+        <section className="animate-in mt-16" style={{ "--delay": "400ms" } as React.CSSProperties}>
           <h2 className="text-sm font-medium text-muted">Recently played</h2>
           <ul className="mt-6 space-y-3">
             {recentlyPlayed.map((track, i) => (

@@ -10,12 +10,16 @@ export const metadata: Metadata = {
 export default function Photos() {
   return (
     <main>
-      <h1 className="text-2xl font-medium tracking-tight">Photos</h1>
-      <p className="mt-3 text-[15px] text-muted">
-        Shot on film, mostly around Copenhagen.
-      </p>
+      <div className="animate-in">
+        <h1 className="text-2xl font-medium tracking-tight">Photos</h1>
+        <p className="mt-3 text-[15px] text-muted">
+          A collection of photos show on analog, digital and a range of iPhone cameras.
+        </p>
+      </div>
 
-      <PhotoGrid photos={photos} />
+      <div className="animate-in" style={{ "--delay": "150ms" } as React.CSSProperties}>
+        <PhotoGrid photos={photos} />
+      </div>
     </main>
   );
 }

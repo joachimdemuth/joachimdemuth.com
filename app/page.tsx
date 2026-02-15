@@ -1,4 +1,5 @@
 import { GradientText } from "./components/gradient-text";
+import { NowPlayingCompact } from "./components/now-playing-compact";
 
 const experience = [
   {
@@ -44,7 +45,7 @@ export default function Home() {
     <main>
       <h1 className="text-2xl font-medium tracking-tight">Joachim Demuth</h1>
 
-      <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-muted">
+      <div className="animate-in mt-8 space-y-4 text-[15px] leading-relaxed text-muted" style={{ "--delay": "100ms" } as React.CSSProperties}>
         <p>
           Tech Lead, based in Copenhagen. Currently at{" "}
           <a
@@ -70,7 +71,7 @@ export default function Home() {
         </p>
       </div>
 
-      <section className="mt-16">
+      <section className="animate-in mt-16" style={{ "--delay": "200ms" } as React.CSSProperties}>
         <h2 className="text-sm font-medium text-muted">Experience</h2>
         <ul className="mt-6 space-y-4">
           {experience.map((item) => (
@@ -94,7 +95,11 @@ export default function Home() {
         </ul>
       </section>
 
-      <div className="mt-16 flex gap-6 text-sm text-muted">
+      <div className="animate-in mt-16" style={{ "--delay": "300ms" } as React.CSSProperties}>
+        <NowPlayingCompact />
+      </div>
+
+      <div className="animate-in mt-6 flex gap-6 text-sm text-muted" style={{ "--delay": "400ms" } as React.CSSProperties}>
         <a
           href="https://github.com/joachimdemuth"
           target="_blank"
