@@ -25,4 +25,9 @@ export const notes: Note[] = [
     content:
       "Still experiencing a lot of firsts, which is always nice.",
   },
+  {
+    date: "2026-02-17",
+    content:
+      "I believe product development in the future will be highly dependent on well written docs.",
+  },
 ];
